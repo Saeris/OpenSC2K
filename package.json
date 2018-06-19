@@ -13,7 +13,9 @@
     "coverage:report": "cross-env NODE_ENV=test nyc report --color",
     "electron:rebuild": "electron-rebuild -f -w sqlite3 -p",
     "snyk:protect": "snyk protect",
-    "prepublish": "yarn electron:rebuild && yarn snyk:protect"
+    "prepublish": "yarn electron:rebuild && yarn snyk:protect",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
     "bmp-js": "^0.0.3",
     "electron": "^1.8.2-beta.3",
     "knex": "^0.14.2",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^4.0.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -76,7 +79,6 @@
     "nyc": "^11.2.1",
     "power-assert": "^1.4.4",
     "prettier": "^1.7.0",
-    "snyk": "^1.69.6",
     "sw-precache-webpack-plugin": "^0.11.4",
     "tap-nyan": "^1.1.0",
     "webpack": "^3.10.0",
